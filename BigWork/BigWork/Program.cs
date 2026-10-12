@@ -6,14 +6,16 @@ Console.WriteLine(probe.TryAdd(2));
 Console.WriteLine(probe.TryAdd(3));
 
 
-var numbers = new GuardedBuffer<int>(x => x > 0);
-Console.WriteLine(numbers.TryAdd(5));
-Console.WriteLine(numbers.TryAdd(-3));
-Console.WriteLine(numbers.TryAdd(100));
-Console.WriteLine($"Count = {numbers.Count}, AcceptedCount = {numbers.AcceptedCount}");
-var words = new GuardedBuffer<string>(s => !string.IsNullOrWhiteSpace(s));
-Console.WriteLine(words.TryAdd("обобщение"));
-Console.WriteLine(words.TryAdd(" "));
-Console.WriteLine($"Count = {words.Count}, AcceptedCount = {words.AcceptedCount}");
-Console.WriteLine($"numbers.AcceptedCount = {numbers.AcceptedCount}");
+var temperature = new Record<double>(20, "°C");
+Console.WriteLine($"Исходная запись: {temperature}");
+var fahrenheit = RecordMapper.Map(
+temperature, (double c) => c * 9 / 5 + 32, "°F");
+Console.WriteLine($"double → double: {fahrenheit}");
+var category = RecordMapper.Map(
+temperature, (double c) => c >= 15 ? "тепло" : "холодно", "Категория");
+Console.WriteLine($"double → string: {category}");
+var health = new Record<int>(50, "Здоровье");
+Console.WriteLine($"int → int: {RecordMapper.Map(health, (int h) => h + 10, "Здоровье с бонусом")}");
+Console.WriteLine($"int → bool: {RecordMapper.Map(health, (int h) => h >= 50, "В норме")}");
+
 Console.ReadLine();
