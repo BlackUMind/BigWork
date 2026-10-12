@@ -1,4 +1,5 @@
-﻿using BigWork.Core;
+﻿using BigWork;
+using BigWork.Core;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 Console.WriteLine("=== Блок A: иерархии обобщённых классов ===");
@@ -21,7 +22,7 @@ var words = new GuardedBuffer<string>(s => !string.IsNullOrWhiteSpace(s));
 Console.WriteLine($"TryAdd(\"обобщение\") = {words.TryAdd("обобщение")}");
 Console.WriteLine($"TryAdd(\" \") = {words.TryAdd(" ")}");
 Console.WriteLine($"Count = {words.Count}, AcceptedCount = {words.AcceptedCount}");
-Console.WriteLine($"Счётчики независимы: numbers.AcceptedCount = { numbers.AcceptedCount}");
+Console.WriteLine($"Счётчики независимы: numbers.AcceptedCount = {numbers.AcceptedCount}");
 Console.WriteLine();
 Console.WriteLine("=== Блок B: обобщённая структура, делегат и метод ===");
 var temperature = new Record<double>(20, "°C");
@@ -55,14 +56,13 @@ Console.WriteLine();
 Console.WriteLine("=== Блок D: методы расширения ===");
 var numbers3 = new List<int> { 5, 9, 2 };
 Console.WriteLine($"FindMax на List<int> = {numbers3.FindMax()}");
-Console.WriteLine($"FindMax на пустом List<string> = {(new List<string>().FindMax() is
-null ? "null" : "ошибка")}");
+Console.WriteLine($"FindMax на пустом List<string> = {(new List<string>().FindMax() is null ? "null" : "ошибка")}");
 Console.WriteLine($"FindMax на пустом List<int> = {new List<int>().FindMax()}");
 var catalog = new List<Product>
 {
-apple,
-bread,
-new Product { Id = 3, Name = "Сыр", Price = 450m }
+    apple,
+    bread,
+    new Product { Id = 3, Name = "Сыр", Price = 450m }
 };
 Console.WriteLine($"FindMax на List<Product> = {catalog.FindMax()!.Name}");
 numbers3.PrintAll("Элемент: ");

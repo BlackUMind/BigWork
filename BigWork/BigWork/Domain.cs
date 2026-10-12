@@ -1,4 +1,6 @@
-﻿namespace BigWork.Core
+﻿using BigWork.Core;
+
+namespace BigWork
 {
     public sealed class Product : IEntity, IComparable<Product>
     {
