@@ -71,3 +71,17 @@ new List<string>().PrintAll("Элемент: ");
 Console.WriteLine("(пустой список ничего не напечатал)");
 
 Console.ReadLine();
+
+//CS0029: нельзя неявно преобразовать Container<Dog> в Container<Animal>.
+
+//Container<Animal> box = new Container<Dog>(new Dog { Name = "Шарик" });
+
+//CS1961: ковариантный out T нельзя использовать как тип параметра метода Put.
+// public interface IProbeContainer<out T>
+//{
+//    T GetItem();
+//    void Put(T item);
+//}
+
+//CS0311: string не реализует IEntity, требуемый для InMemoryRepository<T>.
+// var repo = new InMemoryRepository<string>();
