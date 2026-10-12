@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigWork", "BigWork\BigWork.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigWork.Core", "BigWork.Core\BigWork.Core.csproj", "{2F120EB4-6C23-43F8-9B65-CDA8060754D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigWork.Demo", "BigWork.Demo\BigWork.Demo.csproj", "{CA02D78B-7C34-4226-85C6-72C09D83D6C6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{2F120EB4-6C23-43F8-9B65-CDA8060754D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F120EB4-6C23-43F8-9B65-CDA8060754D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F120EB4-6C23-43F8-9B65-CDA8060754D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA02D78B-7C34-4226-85C6-72C09D83D6C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA02D78B-7C34-4226-85C6-72C09D83D6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA02D78B-7C34-4226-85C6-72C09D83D6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA02D78B-7C34-4226-85C6-72C09D83D6C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
